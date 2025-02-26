@@ -11,12 +11,12 @@
     <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
     <script>
-        const span = React.createElement(
-            "span", 
-            {id: "sexy-span"}, 
-            "hello im a span"
-        )
+        const span = React.createElement("span", {onMouseEnter: ()=> console.log("mouse enter"), style: {color: "red"}}, "hello im a span")
+        const btn = React.createElement("button", {
+            onClick: () => console.log("clicked")
+            }, "click mme")
+        const container = React.createElement("div", null, [span,btn])
         const root = document.getElementById('root')
-        ReactDOM.render(span, root)
+        ReactDOM.render(container, root)
     </script>
 </html>
