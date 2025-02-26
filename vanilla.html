@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span id="total-clicks">Total clicks: 0</span>
+    <button id="btn">Click me</button>
+    <script>
+        const button = document.getElementById('btn');
+        const totalClicks = document.getElementById('total-clicks');
+
+        let counter = 0;
+
+        function handleBtnClick(params) {
+            counter = counter + 1;
+            totalClicks.innerText = `Total Clicks: ${counter}`;
+
+        }
+        button.addEventListener('click', handleBtnClick)
+    </script>
+</body>
+</html>
