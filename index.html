@@ -12,10 +12,18 @@
     <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
     <script type="text/babel">
-        const Title = ()=> (<span id="title" onMouseEnter={()=> console.log("mouseon")}> hello im s span</span>)
-        const Button = ()=> (<button style={{backgroundColor: "tomato"}} onClick={()=>console.log("clicked")}>click me</button>)
-        const Container = ()=> ( <div><Title /> <Button /></div>)
         const root = document.getElementById('root')
-        ReactDOM.render(<Container />, root)
+        function App() {
+            const [counter, setCounter] = React.useState(0)
+            const onClick = () => {
+                setCounter(counter + 1)
+            }
+            return( 
+            <div>
+                <h3>Total clicks: {counter}</h3> 
+                <button onClick={onClick}>click me</button>
+            </div>)
+        }
+        ReactDOM.render(<App />, root)
     </script>
 </html>
